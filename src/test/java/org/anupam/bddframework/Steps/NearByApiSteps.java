@@ -23,43 +23,52 @@ public class NearByApiSteps {
     @MockBean
     NeayByApiData neayByApiData;
 
+    public static String URL;
+    public static String APIPATH;
+    private static String LOCATION;
+    private static String RADIUS;
+    private static String TYPE;
+    private static String KEYWORD;
+    private static String KEY = "AIzaSyDPqtPHlzJikfaNHQENEJ9utXl4R9Ix_Uc";
+    private static Response APIRESPONSE;
+
     @Given("^base URL is '(.*)'$")
     public void baseURLIsHttpsMapsGoogleapisComMapsApi(String baseURL) throws Throwable {
-        baseUtil.restAssured.baseURI = baseURL;
+        URL = baseURL;
 
     }
 
     @And("^API path is '(.*)'$")
     public void apiPathIsPlaceNearbysearchJson(String apiPath) throws Throwable {
-        neayByApiData.setApiPath(apiPath);
+        APIPATH =apiPath;
     }
 
-    @And("^Params are '(.*)' '(.*)' '(.*)' '(.*)' and '(.*)'$")
-    public void paramsAreLocationRadiusTypeKeywordAndKey(String location, String radius,String type,String keyword,String key) throws Throwable {
-        neayByApiData.setLocation(location);
-        neayByApiData.setRadius(radius);
-        neayByApiData.setType(type);
-        neayByApiData.setKeyword(keyword);
-        neayByApiData.setKey(key);
+    @And("^Params are '(.*)' '(.*)' '(.*)' '(.*)'$")
+    public void paramsAreLocationRadiusTypeKeywordAndKey(String location, String radius,String type,String keyword) throws Throwable {
+        LOCATION = location;
+        RADIUS = radius;
+        TYPE = type;
+        KEYWORD = keyword;
     }
 
     @When("^service hits with above request capture request$")
     public void serviceHitsWithAboveRequestCaptureRequest() throws Throwable {
-        Response response = given()
-                .queryParam("location",neayByApiData.getLocation())
-                .queryParam("radius",neayByApiData.getRadius())
-                .queryParam("type",neayByApiData.getType())
-                .queryParam("keyword",neayByApiData.getKeyword())
-                .queryParam("key",neayByApiData.getKey())
+        baseUtil.restAssured.baseURI = URL;
+        Response response;
+        response = given()
+                .queryParam("location",LOCATION)
+                .queryParam("radius",RADIUS)
+                .queryParam("type",TYPE)
+                .queryParam("keyword",KEYWORD)
+                .queryParam("key",KEY)
                 .log().all()
-                .get(neayByApiData.getApiPath());
+                .get(APIPATH);
         response.prettyPrint();
-
-        neayByApiData.setApiResponse(response);
+        APIRESPONSE = response;
     }
 
     @Then("^Verify success is true$")
     public void verifySuccessIsTrue() throws Throwable {
-        assertThat(" Success is not true", neayByApiData.getApiResponse().getStatusCode(), equalTo(200));
+        assertThat(" Success is not true", APIRESPONSE.getStatusCode(), equalTo(200));
     }
 }
