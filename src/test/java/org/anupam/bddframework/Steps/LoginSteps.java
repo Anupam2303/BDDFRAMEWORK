@@ -7,7 +7,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import lombok.Data;
 import org.anupam.bddframework.Base.BaseUtil;
-import org.anupam.bddframework.Pages.LoginPHPTravellers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -15,8 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 @BddStepDefinition
 @Data
 public class LoginSteps {
-    @MockBean
-    private LoginPHPTravellers loginPHPTravellers;
     @MockBean
     private BaseUtil baseUtil;
 
@@ -44,6 +41,6 @@ public class LoginSteps {
 
     @And("^Logout buttin should be enabled$")
     public void logoutButtinShouldBeEnabled() throws Throwable {
-
+        baseUtil.driver.close();
     }
 }
