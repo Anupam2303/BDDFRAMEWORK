@@ -1,4 +1,4 @@
-package org.anupam.bddframework.bddframework.Pages;
+package org.anupam.bddframework.Pages;
 
 import lombok.Data;
 import net.serenitybdd.core.annotations.findby.FindBy;

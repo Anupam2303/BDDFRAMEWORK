@@ -1,9 +1,12 @@
-package org.anupam.bddframework.bddframework.Steps;
+package org.anupam.bddframework.Steps;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.anupam.bddframework.Pages.LoginPHPTravellers;
+import org.anupam.bddframework.Properties.WebProperties;
+import org.anupam.bddframework.StepDefinition.BddStepDefinition;
 import org.anupam.bddframework.bddframework.Pages.LoginPHPTravellers;
 import org.anupam.bddframework.bddframework.Properties.WebProperties;
 import org.anupam.bddframework.bddframework.StepDefinition.BddStepDefinition;

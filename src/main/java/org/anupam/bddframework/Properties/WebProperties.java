@@ -1,4 +1,4 @@
-package org.anupam.bddframework.bddframework.Properties;
+package org.anupam.bddframework.Properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

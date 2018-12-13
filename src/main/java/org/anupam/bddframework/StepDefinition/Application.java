@@ -1,4 +1,4 @@
-package org.anupam.bddframework.bddframework.StepDefinition;
+package org.anupam.bddframework.StepDefinition;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
