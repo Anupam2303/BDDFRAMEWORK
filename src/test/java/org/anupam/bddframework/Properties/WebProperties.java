@@ -1,10 +1,12 @@
 package org.anupam.bddframework.Properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 @ConfigurationProperties("web")
 public class WebProperties {
     private Map<String, String> endpoint = new HashMap();

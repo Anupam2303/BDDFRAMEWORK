@@ -1,4 +1,4 @@
-package org.anupam.bddframework.StepDefinition;
+package StepDefinition;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,11 +8,11 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(
         basePackages = {"org.anupam.bddframework", "net.thucydides", "net.serenitybdd"}
 )
-public class Application {
-    public Application() {
+public class TestApplication {
+    public TestApplication() {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(TestApplication.class, args);
     }
 }

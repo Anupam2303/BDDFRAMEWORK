@@ -1,4 +1,4 @@
-package org.anupam.bddframework.StepDefinition;
+package StepDefinition;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,10 +14,10 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @ContextConfiguration(
-        classes = {Application.class}
+        classes = {TestApplication.class}
 )
 @SpringBootTest(
-        classes = {Application.class}
+        classes = {TestApplication.class}
 )
 @RunWith(SpringJUnit4ClassRunner.class)
 public @interface BddStepDefinition {
