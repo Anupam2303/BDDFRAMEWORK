@@ -7,19 +7,21 @@ import cucumber.api.java.en.When;
 import org.anupam.bddframework.bddframework.Pages.LoginPHPTravellers;
 import org.anupam.bddframework.bddframework.Properties.WebProperties;
 import org.anupam.bddframework.bddframework.StepDefinition.BddStepDefinition;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 @BddStepDefinition
 public class LoginSteps {
-    @Autowired
+    @MockBean
+    private
     LoginPHPTravellers loginPHPTravellers;
-    @Autowired
+    @MockBean
+    private
     WebProperties webProperties;
 
 
     @Given("^Where URL is '(.*)'$")
     public void whereURLIsHttpsPhptravelsOrgClientareaPhp(String URL) throws Throwable {
-        loginPHPTravellers.openAt(webProperties.endpoint("loginphp"));
+        loginPHPTravellers.open();
     }
 
     @When("^userName is '(.*)' and password is '(.*)'$")

@@ -4,10 +4,12 @@ import lombok.Data;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 import org.springframework.stereotype.Component;
 
 @Component("LoginPHPTravellers")
 @Data
+@DefaultUrl("https://phptravels.org/clientarea.php")
 public class LoginPHPTravellers extends PageObject {
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[8]/a")
     private WebElementFacade loginIcon;
