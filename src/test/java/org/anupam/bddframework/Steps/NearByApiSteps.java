@@ -8,7 +8,6 @@ import cucumber.api.java.en.When;
 import io.restassured.response.Response;
 import lombok.Data;
 import org.anupam.bddframework.Base.BaseUtil;
-import org.anupam.bddframework.Data.NeayByApiData;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static io.restassured.RestAssured.given;
@@ -20,9 +19,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class NearByApiSteps {
     @MockBean
     BaseUtil baseUtil;
-    @MockBean
-    NeayByApiData neayByApiData;
-
     public static String URL;
     public static String APIPATH;
     private static String LOCATION;
@@ -35,7 +31,6 @@ public class NearByApiSteps {
     @Given("^base URL is '(.*)'$")
     public void baseURLIsHttpsMapsGoogleapisComMapsApi(String baseURL) throws Throwable {
         URL = baseURL;
-
     }
 
     @And("^API path is '(.*)'$")
