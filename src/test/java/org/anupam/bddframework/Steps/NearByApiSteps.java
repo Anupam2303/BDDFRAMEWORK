@@ -25,7 +25,7 @@ public class NearByApiSteps {
     private static String RADIUS;
     private static String TYPE;
     private static String KEYWORD;
-    private static String KEY = "AIzaSyDPqtPHlzJikfaNHQENEJ9utXl4R9Ix_Uc";
+    private static String KEY = "abcdef";
     private static Response APIRESPONSE;
 
     @Given("^base URL is '(.*)'$")
