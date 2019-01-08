@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/feature/"
         , format = {"json:target/destination/cucumber.json"},
-        tags = {"@upvote"}
+        tags = {"@NearbyAPI"}
         )
 public class BddRunner {
 

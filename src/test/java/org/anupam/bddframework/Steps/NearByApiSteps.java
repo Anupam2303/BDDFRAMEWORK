@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 import io.restassured.response.Response;
 import lombok.Data;
 import org.anupam.bddframework.Base.BaseUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static io.restassured.RestAssured.given;
@@ -17,7 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @BddStepDefinition
 @Data
 public class NearByApiSteps {
-    @MockBean
+    @Autowired
     BaseUtil baseUtil;
     public static String URL;
     public static String APIPATH;
@@ -25,7 +26,6 @@ public class NearByApiSteps {
     private static String RADIUS;
     private static String TYPE;
     private static String KEYWORD;
-    private static String KEY = "abcdef";
     private static Response APIRESPONSE;
 
     @Given("^base URL is '(.*)'$")

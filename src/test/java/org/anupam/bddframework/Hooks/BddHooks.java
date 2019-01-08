@@ -6,8 +6,10 @@ import cucumber.api.java.Before;
 import lombok.Data;
 import org.anupam.bddframework.Base.BaseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Data
+@Component
 public class BddHooks extends BaseUtil {
     @Autowired
     private BaseUtil base;
